@@ -18,11 +18,11 @@
 .item a{
     color: #FFF;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .item a:hover{
     color:#FFBB33;
     text-decoration: none;
-    transition: 0.3s;
 }
 
