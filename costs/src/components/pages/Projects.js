@@ -6,6 +6,7 @@ import styles from './Projects.module.css';
 import Container  from '../layout/Container';
 import LinkButton from '../layout/LinkButton';
 import ProjectCard from "../projects/ProjectCard";
+import Loading from "../layout/Loading";
 
 
 import Message from "../layout/Message";
@@ -13,6 +14,7 @@ import Message from "../layout/Message";
 function Projects(){
     
     const [projects, setProjects] = useState([]);
+    const [removerLoading, setRemoveLoading] = useState(false);
 
 
     const location = useLocation();
@@ -22,17 +24,21 @@ function Projects(){
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/projects", {
+        setTimeout(
+            () => {
+                fetch("http://localhost:5000/projects", {
             method: 'GET',
             headers:{
                 'Content-Type': 'application/json',
             },
-        }).then(resp => resp.json())
-        .then(data => {
-            console.log(data)
-            setProjects(data);
-        })
-        .catch(err => console.log(err))
+            }).then(resp => resp.json())
+                .then(data => {
+                console.log(data)
+                setProjects(data);
+                setRemoveLoading(true);
+            })
+            .catch(err => console.log(err))    
+            }, 300)
     }, [])
     
     return (
@@ -51,6 +57,10 @@ function Projects(){
                     category={project.category.name}
                     key={project.id}/>
                 ))}
+                {!removerLoading && <Loading/>}
+                {removerLoading && projects.length === 0 &&
+                    <p>Não há prjetos cadastrados</p>
+                }
             </Container>
         </div>
     )
