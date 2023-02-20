@@ -7,8 +7,21 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 2200,
+      "services": [
+        {
+          "name": "Dev PHP",
+          "cost": "2100",
+          "description": "Contratar dev php",
+          "id": "8206c1bd-9e63-4d76-9f0d-f9fa738ccb26"
+        },
+        {
+          "name": "Adicional para Dev PHP",
+          "cost": "100",
+          "description": "testando",
+          "id": "8219c27c-c314-47b4-a0cc-c22954bf230c"
+        }
+      ],
       "id": 3
     },
     {
