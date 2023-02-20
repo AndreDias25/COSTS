@@ -18,8 +18,15 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 222,
+      "services": [
+        {
+          "name": "Meu novo mundo",
+          "cost": "222",
+          "description": "sei la",
+          "id": "874fe39f-e586-441d-8813-8902c9d105d3"
+        }
+      ],
       "id": 4
     }
   ],
